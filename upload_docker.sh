@@ -6,12 +6,17 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath="<lingxueli/machine_learning_microservice_api>"
+dockerpath=e162d769f25b
 
 # Step 2:  
 # Authenticate & tag
+echo "Please log in to Docker Hub"
+
+docker login
+docker tag $dockerpath lingxueli/api:latest
+
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
 # Push image to a docker repository
-docker push $dockerpath
+docker push lingxueli/api
