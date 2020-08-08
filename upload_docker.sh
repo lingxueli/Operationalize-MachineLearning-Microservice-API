@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath=e162d769f25b
+dockerpath=api
 
 # Step 2:  
 # Authenticate & tag
