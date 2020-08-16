@@ -5,7 +5,8 @@
 # Step 1:
 # This is your Docker ID/path
 # dockerpath=<>
-dockerpath=api
+dockerpath=lingxueli/api:latest
+docker login --username lingxueli
 
 docker login
 
