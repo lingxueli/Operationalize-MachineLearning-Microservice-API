@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![lingxueli](https://circleci.com/gh/lingxueli/Operationalize-MachineLearning-Microservice-API.svg?style=svg)](<LINK>)
 
 ## Project Overview
 
