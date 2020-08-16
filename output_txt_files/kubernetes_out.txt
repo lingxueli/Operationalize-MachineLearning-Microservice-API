@@ -1,1 +1,70 @@
 <paste log output from Kubernetes-mediated prediction, here>
+PS C:\WINDOWS\system32> minikube start --driver=hyperv
+* minikube v1.12.2 on Microsoft Windows 10 Pro 10.0.18362 Build 18362
+* Using the hyperv driver based on user configuration
+* Starting control plane node minikube in cluster minikube
+* Creating hyperv VM (CPUs=2, Memory=4000MB, Disk=20000MB) ...
+* Preparing Kubernetes v1.18.3 on Docker 19.03.12 ...
+* Verifying Kubernetes components...
+* Enabled addons: default-storageclass, storage-provisioner
+* Done! kubectl is now configured to use "minikube"
+
+! C:\Program Files\Docker\Docker\resources\bin\kubectl.exe is version 1.16.6-beta.0, which may be incompatible with Kubernetes 1.18.3.
+* You can also use 'minikube kubectl -- get pods' to invoke a matching version
+PS C:\WINDOWS\system32> minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+PS C:\WINDOWS\system32> kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: C:\Users\lingx\.minikube\ca.crt
+    server: https://172.17.116.36:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: C:\Users\lingx\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\lingx\.minikube\profiles\minikube\client.key
+
+PS C:\Users\lingx\OneDrive\Documents\Udacity-CloudDevOps\Project3-ML-Microservice-API\Operationalize-MachineLearning-Microservice-API> .\run_kubernetes.sh
+PS C:\Users\lingx\OneDrive\Documents\Udacity-CloudDevOps\Project3-ML-Microservice-API\Operationalize-MachineLearning-Microservice-API> kubectl get pod
+NAME   READY   STATUS    RESTARTS   AGE
+api    1/1     Running   0          93s
+PS C:\Users\lingx\OneDrive\Documents\Udacity-CloudDevOps\Project3-ML-Microservice-API\Operationalize-MachineLearning-Microservice-API> .\run_kubernetes.sh
+
+Error: Cannot perform an interactive login from a non TTY device
+Authenticating with existing credentials...
+Login Succeeded
+Error from server (AlreadyExists): pods "api" already exists
+NAME   READY   STATUS    RESTARTS   AGE
+api    1/1     Running   0          100s
+Forwarding from [::1]:8000 -> 80
+
+PS C:\Users\lingx\OneDrive\Documents\Udacity-CloudDevOps\Project3-ML-Microservice-API\Operationalize-MachineLearning-Microservice-API> .\make_prediction.sh
+
+Port: 8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   260  100    48  100   212     48    212  0:00:01 --:--:--  0:00:01  5652{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+Microsoft Windows [Version 10.0.18362.1016]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
