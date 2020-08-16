@@ -25,3 +25,4 @@ kubectl get pods
 # Forward the container port to a host
 kubectl port-forward api 8000:80
 
+cmd /k
