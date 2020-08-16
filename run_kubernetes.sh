@@ -7,6 +7,8 @@
 # dockerpath=<>
 dockerpath=api
 
+docker login
+
 # Step 2
 # Run the Docker Hub container with kubernetes
 kubectl run api\
