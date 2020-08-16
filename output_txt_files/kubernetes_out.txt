@@ -53,6 +53,7 @@ Error from server (AlreadyExists): pods "api" already exists
 NAME   READY   STATUS    RESTARTS   AGE
 api    1/1     Running   0          100s
 Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
 
 PS C:\Users\lingx\OneDrive\Documents\Udacity-CloudDevOps\Project3-ML-Microservice-API\Operationalize-MachineLearning-Microservice-API> .\make_prediction.sh
 
